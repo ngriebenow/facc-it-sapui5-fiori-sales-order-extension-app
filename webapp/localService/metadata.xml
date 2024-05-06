@@ -1,0 +1,2306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="Core"/>
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='RSODP_CLOUD_DATA_INTEGRATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.DataIntegration.v1" Alias="Integration"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HIERARCHY',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Hierarchy.v1" Alias="SAP__hierarchy"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.cdi_cds.i_salesorder.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="MasterData">
+                <Key>
+                    <PropertyRef Name="SalesOrder"/>
+                </Key>
+                <Property Name="SalesOrder" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="SalesOrderType" Type="Edm.String" MaxLength="4"/>
+                <Property Name="SalesOrderProcessingType" Type="Edm.String" MaxLength="1"/>
+                <Property Name="CreatedByUser" Type="Edm.String" MaxLength="12"/>
+                <Property Name="LastChangedByUser" Type="Edm.String" MaxLength="12"/>
+                <Property Name="CreationDate" Type="Edm.Date"/>
+                <Property Name="CreationTime" Type="Edm.TimeOfDay"/>
+                <Property Name="LastChangeDate" Type="Edm.Date"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="SenderBusinessSystemName" Type="Edm.String" MaxLength="60"/>
+                <Property Name="ExternalDocumentID" Type="Edm.String" MaxLength="40"/>
+                <Property Name="ExternalDocLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="SalesOrganization" Type="Edm.String" MaxLength="4"/>
+                <Property Name="DistributionChannel" Type="Edm.String" MaxLength="2"/>
+                <Property Name="OrganizationDivision" Type="Edm.String" MaxLength="2"/>
+                <Property Name="SalesGroup" Type="Edm.String" MaxLength="3"/>
+                <Property Name="SalesOffice" Type="Edm.String" MaxLength="4"/>
+                <Property Name="SoldToParty" Type="Edm.String" MaxLength="10"/>
+                <Property Name="CustomerGroup" Type="Edm.String" MaxLength="2"/>
+                <Property Name="AdditionalCustomerGroup1" Type="Edm.String" MaxLength="3"/>
+                <Property Name="AdditionalCustomerGroup2" Type="Edm.String" MaxLength="3"/>
+                <Property Name="AdditionalCustomerGroup3" Type="Edm.String" MaxLength="3"/>
+                <Property Name="AdditionalCustomerGroup4" Type="Edm.String" MaxLength="3"/>
+                <Property Name="AdditionalCustomerGroup5" Type="Edm.String" MaxLength="3"/>
+                <Property Name="SlsDocIsRlvtForProofOfDeliv" Type="Edm.Boolean"/>
+                <Property Name="CreditControlArea" Type="Edm.String" MaxLength="4"/>
+                <Property Name="CustomerRebateAgreement" Type="Edm.String" MaxLength="10"/>
+                <Property Name="SalesOrderDate" Type="Edm.Date"/>
+                <Property Name="ServicesRenderedDate" Type="Edm.Date"/>
+                <Property Name="SDDocumentReason" Type="Edm.String" MaxLength="3"/>
+                <Property Name="PurchaseOrderByCustomer" Type="Edm.String" MaxLength="35"/>
+                <Property Name="PurchaseOrderByShipToParty" Type="Edm.String" MaxLength="35"/>
+                <Property Name="SDDocumentCollectiveNumber" Type="Edm.String" MaxLength="10"/>
+                <Property Name="CustomerPurchaseOrderType" Type="Edm.String" MaxLength="4"/>
+                <Property Name="CustomerPurchaseOrderDate" Type="Edm.Date"/>
+                <Property Name="CustomerPurchaseOrderSuplmnt" Type="Edm.String" MaxLength="4"/>
+                <Property Name="SalesDistrict" Type="Edm.String" MaxLength="6"/>
+                <Property Name="StatisticsCurrency" Type="Edm.String" MaxLength="5"/>
+                <Property Name="ProductCatalog" Type="Edm.String" MaxLength="10"/>
+                <Property Name="NextCreditCheckDate" Type="Edm.Date"/>
+                <Property Name="LastCustomerContactDate" Type="Edm.Date"/>
+                <Property Name="TotalNetAmount" Type="Edm.Decimal" Scale="variable"/>
+                <Property Name="TransactionCurrency" Type="Edm.String" MaxLength="5"/>
+                <Property Name="PricingDate" Type="Edm.Date"/>
+                <Property Name="PriceDetnExchangeRate" Type="Edm.Decimal" Precision="17" Scale="5"/>
+                <Property Name="RetailPromotion" Type="Edm.String" MaxLength="10"/>
+                <Property Name="SalesOrderCondition" Type="Edm.String" MaxLength="10"/>
+                <Property Name="SDPricingProcedure" Type="Edm.String" MaxLength="6"/>
+                <Property Name="CustomerPriceGroup" Type="Edm.String" MaxLength="2"/>
+                <Property Name="PriceListType" Type="Edm.String" MaxLength="2"/>
+                <Property Name="BillingPlan" Type="Edm.String" MaxLength="10"/>
+                <Property Name="CustomerTaxClassification1" Type="Edm.String" MaxLength="1"/>
+                <Property Name="CustomerTaxClassification2" Type="Edm.String" MaxLength="1"/>
+                <Property Name="CustomerTaxClassification3" Type="Edm.String" MaxLength="1"/>
+                <Property Name="CustomerTaxClassification4" Type="Edm.String" MaxLength="1"/>
+                <Property Name="CustomerTaxClassification5" Type="Edm.String" MaxLength="1"/>
+                <Property Name="CustomerTaxClassification6" Type="Edm.String" MaxLength="1"/>
+                <Property Name="CustomerTaxClassification7" Type="Edm.String" MaxLength="1"/>
+                <Property Name="CustomerTaxClassification8" Type="Edm.String" MaxLength="1"/>
+                <Property Name="CustomerTaxClassification9" Type="Edm.String" MaxLength="1"/>
+                <Property Name="TaxDepartureCountry" Type="Edm.String" MaxLength="3"/>
+                <Property Name="VATRegistrationCountry" Type="Edm.String" MaxLength="3"/>
+                <Property Name="RequestedDeliveryDate" Type="Edm.Date"/>
+                <Property Name="DeliveryDateTypeRule" Type="Edm.String" MaxLength="1"/>
+                <Property Name="ShippingType" Type="Edm.String" MaxLength="2"/>
+                <Property Name="ShippingCondition" Type="Edm.String" MaxLength="2"/>
+                <Property Name="ReceivingPoint" Type="Edm.String" MaxLength="25"/>
+                <Property Name="IncotermsClassification" Type="Edm.String" MaxLength="3"/>
+                <Property Name="IncotermsTransferLocation" Type="Edm.String" MaxLength="28"/>
+                <Property Name="IncotermsLocation1" Type="Edm.String" MaxLength="70"/>
+                <Property Name="IncotermsLocation2" Type="Edm.String" MaxLength="70"/>
+                <Property Name="IncotermsVersion" Type="Edm.String" MaxLength="4"/>
+                <Property Name="CompleteDeliveryIsDefined" Type="Edm.Boolean"/>
+                <Property Name="OrderCombinationIsAllowed" Type="Edm.Boolean"/>
+                <Property Name="DeliveryBlockReason" Type="Edm.String" MaxLength="2"/>
+                <Property Name="FashionCancelDate" Type="Edm.Date"/>
+                <Property Name="SalesOrderApprovalReason" Type="Edm.String" MaxLength="4"/>
+                <Property Name="BillingDocumentDate" Type="Edm.Date"/>
+                <Property Name="BillingCompanyCode" Type="Edm.String" MaxLength="4"/>
+                <Property Name="HeaderBillingBlockReason" Type="Edm.String" MaxLength="2"/>
+                <Property Name="CustomerPaymentTerms" Type="Edm.String" MaxLength="4"/>
+                <Property Name="PaymentMethod" Type="Edm.String" MaxLength="1"/>
+                <Property Name="FixedValueDate" Type="Edm.Date"/>
+                <Property Name="FiscalYear" Type="Edm.String" MaxLength="4"/>
+                <Property Name="FiscalPeriod" Type="Edm.String" MaxLength="3"/>
+                <Property Name="ExchangeRateDate" Type="Edm.Date"/>
+                <Property Name="ExchangeRateType" Type="Edm.String" MaxLength="4"/>
+                <Property Name="AccountingExchangeRate" Type="Edm.Decimal" Precision="17" Scale="5"/>
+                <Property Name="BusinessArea" Type="Edm.String" MaxLength="4"/>
+                <Property Name="CustomerAccountAssignmentGroup" Type="Edm.String" MaxLength="2"/>
+                <Property Name="CostCenterBusinessArea" Type="Edm.String" MaxLength="4"/>
+                <Property Name="CostCenter" Type="Edm.String" MaxLength="10"/>
+                <Property Name="ControllingArea" Type="Edm.String" MaxLength="4"/>
+                <Property Name="OrderID" Type="Edm.String" MaxLength="12"/>
+                <Property Name="ControllingObject" Type="Edm.String" MaxLength="22"/>
+                <Property Name="AssignmentReference" Type="Edm.String" MaxLength="18"/>
+                <Property Name="PaymentPlan" Type="Edm.String" MaxLength="10"/>
+                <Property Name="ContractAccount" Type="Edm.String" MaxLength="12"/>
+                <Property Name="AdditionalValueDays" Type="Edm.String" MaxLength="2"/>
+                <Property Name="CustomerCreditAccount" Type="Edm.String" MaxLength="10"/>
+                <Property Name="ReferenceSDDocument" Type="Edm.String" MaxLength="10"/>
+                <Property Name="ReferenceSDDocumentCategory" Type="Edm.String" MaxLength="4"/>
+                <Property Name="CorrespncExternalReference" Type="Edm.String" MaxLength="12"/>
+                <Property Name="AccountingDocExternalReference" Type="Edm.String" MaxLength="16"/>
+                <Property Name="BusinessSolutionOrder" Type="Edm.String" MaxLength="10"/>
+                <Property Name="OverallSDProcessStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OverallPurchaseConfStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OverallSDDocumentRejectionSts" Type="Edm.String" MaxLength="1"/>
+                <Property Name="TotalBlockStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OverallDelivConfStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OverallTotalDeliveryStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OverallDeliveryStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OverallDeliveryBlockStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OverallOrdReltdBillgStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OverallBillingBlockStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OverallTotalSDDocRefStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OverallSDDocReferenceStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="TotalCreditCheckStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="MaxDocValueCreditCheckStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="PaymentTermCreditCheckStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="FinDocCreditCheckStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="ExprtInsurCreditCheckStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="PaytAuthsnCreditCheckSts" Type="Edm.String" MaxLength="1"/>
+                <Property Name="CentralCreditCheckStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="CentralCreditChkTechErrSts" Type="Edm.String" MaxLength="1"/>
+                <Property Name="HdrGeneralIncompletionStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OverallPricingIncompletionSts" Type="Edm.String" MaxLength="1"/>
+                <Property Name="HeaderDelivIncompletionStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="HeaderBillgIncompletionStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OvrlItmGeneralIncompletionSts" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OvrlItmBillingIncompletionSts" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OvrlItmDelivIncompletionSts" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OverallChmlCmplncStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OverallDangerousGoodsStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OverallSafetyDataSheetStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="SalesDocApprovalStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OverallTrdCmplncEmbargoSts" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OvrlTrdCmplncSnctndListChkSts" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OvrlTrdCmplncLegalCtrlChkSts" Type="Edm.String" MaxLength="1"/>
+                <Property Name="SalesOrderDownPaymentStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="OmniChnlSalesPromotionStatus" Type="Edm.String" MaxLength="1"/>
+                <Property Name="AlternativePricingDate" Type="Edm.Date"/>
+                <Property Name="IsEUTriangularDeal" Type="Edm.Boolean"/>
+                <Property Name="RetailAdditionalCustomerGrp6" Type="Edm.String" MaxLength="3"/>
+                <Property Name="RetailAdditionalCustomerGrp7" Type="Edm.String" MaxLength="3"/>
+                <Property Name="RetailAdditionalCustomerGrp8" Type="Edm.String" MaxLength="3"/>
+                <Property Name="RetailAdditionalCustomerGrp9" Type="Edm.String" MaxLength="3"/>
+                <Property Name="RetailAdditionalCustomerGrp10" Type="Edm.String" MaxLength="3"/>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="MasterData" EntityType="com.sap.gateway.cdi_cds.i_salesorder.v0001.MasterData"/>
+            </EntityContainer>
+            <Annotations Target="SAP__self.MasterData">
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.ChangeTracking">
+                    <Record>
+                        <PropertyValue Property="Supported" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SkipSupported" Bool="false"/>
+                <Annotation Term="Capabilities.TopSupported" Bool="true"/>
+                <Annotation Term="Aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>groupby</String>
+                                <String>aggregate</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="Aggregation.RollupType/None"/>
+                        <PropertyValue Property="PropertyRestrictions" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="Sortable" Bool="true"/>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>LastChangeDateTime</PropertyPath>
+                                <PropertyPath>ExternalDocLastChangeDateTime</PropertyPath>
+                                <PropertyPath>TotalNetAmount</PropertyPath>
+                                <PropertyPath>PriceDetnExchangeRate</PropertyPath>
+                                <PropertyPath>AccountingExchangeRate</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Integration.OriginalDataType">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SalesOrder"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000010)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SalesOrderType"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000004)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SalesOrderProcessingType"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CreatedByUser"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000012)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="LastChangedByUser"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000012)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CreationDate"/>
+                            <PropertyValue Property="OriginalDataType" String="DATS(000008)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CreationTime"/>
+                            <PropertyValue Property="OriginalDataType" String="TIMS(000006)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="LastChangeDate"/>
+                            <PropertyValue Property="OriginalDataType" String="DATS(000008)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="LastChangeDateTime"/>
+                            <PropertyValue Property="OriginalDataType" String="DEC(000021)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SenderBusinessSystemName"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000060)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="ExternalDocumentID"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000040)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="ExternalDocLastChangeDateTime"/>
+                            <PropertyValue Property="OriginalDataType" String="DEC(000021)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SalesOrganization"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000004)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="DistributionChannel"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000002)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OrganizationDivision"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000002)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SalesGroup"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000003)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SalesOffice"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000004)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SoldToParty"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000010)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerGroup"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000002)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="AdditionalCustomerGroup1"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000003)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="AdditionalCustomerGroup2"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000003)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="AdditionalCustomerGroup3"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000003)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="AdditionalCustomerGroup4"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000003)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="AdditionalCustomerGroup5"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000003)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SlsDocIsRlvtForProofOfDeliv"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CreditControlArea"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000004)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerRebateAgreement"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000010)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SalesOrderDate"/>
+                            <PropertyValue Property="OriginalDataType" String="DATS(000008)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="ServicesRenderedDate"/>
+                            <PropertyValue Property="OriginalDataType" String="DATS(000008)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SDDocumentReason"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000003)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="PurchaseOrderByCustomer"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000035)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="PurchaseOrderByShipToParty"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000035)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SDDocumentCollectiveNumber"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000010)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerPurchaseOrderType"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000004)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerPurchaseOrderDate"/>
+                            <PropertyValue Property="OriginalDataType" String="DATS(000008)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerPurchaseOrderSuplmnt"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000004)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SalesDistrict"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000006)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="StatisticsCurrency"/>
+                            <PropertyValue Property="OriginalDataType" String="CUKY(000005)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="ProductCatalog"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000010)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="NextCreditCheckDate"/>
+                            <PropertyValue Property="OriginalDataType" String="DATS(000008)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="LastCustomerContactDate"/>
+                            <PropertyValue Property="OriginalDataType" String="DATS(000008)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="TotalNetAmount"/>
+                            <PropertyValue Property="OriginalDataType" String="CURR(000017)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="TransactionCurrency"/>
+                            <PropertyValue Property="OriginalDataType" String="CUKY(000005)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="PricingDate"/>
+                            <PropertyValue Property="OriginalDataType" String="DATS(000008)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="PriceDetnExchangeRate"/>
+                            <PropertyValue Property="OriginalDataType" String="DEC(000017)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="RetailPromotion"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000010)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SalesOrderCondition"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000010)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SDPricingProcedure"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000006)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerPriceGroup"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000002)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="PriceListType"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000002)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="BillingPlan"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000010)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerTaxClassification1"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerTaxClassification2"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerTaxClassification3"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerTaxClassification4"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerTaxClassification5"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerTaxClassification6"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerTaxClassification7"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerTaxClassification8"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerTaxClassification9"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="TaxDepartureCountry"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000003)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="VATRegistrationCountry"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000003)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="RequestedDeliveryDate"/>
+                            <PropertyValue Property="OriginalDataType" String="DATS(000008)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="DeliveryDateTypeRule"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="ShippingType"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000002)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="ShippingCondition"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000002)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="ReceivingPoint"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000025)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="IncotermsClassification"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000003)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="IncotermsTransferLocation"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000028)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="IncotermsLocation1"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000070)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="IncotermsLocation2"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000070)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="IncotermsVersion"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000004)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CompleteDeliveryIsDefined"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OrderCombinationIsAllowed"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="DeliveryBlockReason"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000002)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="FashionCancelDate"/>
+                            <PropertyValue Property="OriginalDataType" String="DATS(000008)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SalesOrderApprovalReason"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000004)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="BillingDocumentDate"/>
+                            <PropertyValue Property="OriginalDataType" String="DATS(000008)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="BillingCompanyCode"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000004)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="HeaderBillingBlockReason"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000002)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerPaymentTerms"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000004)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="PaymentMethod"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="FixedValueDate"/>
+                            <PropertyValue Property="OriginalDataType" String="DATS(000008)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="FiscalYear"/>
+                            <PropertyValue Property="OriginalDataType" String="NUMC(000004)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="FiscalPeriod"/>
+                            <PropertyValue Property="OriginalDataType" String="NUMC(000003)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="ExchangeRateDate"/>
+                            <PropertyValue Property="OriginalDataType" String="DATS(000008)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="ExchangeRateType"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000004)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="AccountingExchangeRate"/>
+                            <PropertyValue Property="OriginalDataType" String="DEC(000017)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="BusinessArea"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000004)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerAccountAssignmentGroup"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000002)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CostCenterBusinessArea"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000004)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CostCenter"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000010)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="ControllingArea"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000004)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OrderID"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000012)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="ControllingObject"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000022)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="AssignmentReference"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000018)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="PaymentPlan"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000010)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="ContractAccount"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000012)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="AdditionalValueDays"/>
+                            <PropertyValue Property="OriginalDataType" String="NUMC(000002)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CustomerCreditAccount"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000010)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="ReferenceSDDocument"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000010)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="ReferenceSDDocumentCategory"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000004)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CorrespncExternalReference"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000012)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="AccountingDocExternalReference"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000016)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="BusinessSolutionOrder"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000010)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OverallSDProcessStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OverallPurchaseConfStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OverallSDDocumentRejectionSts"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="TotalBlockStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OverallDelivConfStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OverallTotalDeliveryStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OverallDeliveryStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OverallDeliveryBlockStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OverallOrdReltdBillgStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OverallBillingBlockStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OverallTotalSDDocRefStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OverallSDDocReferenceStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="TotalCreditCheckStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="MaxDocValueCreditCheckStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="PaymentTermCreditCheckStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="FinDocCreditCheckStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="ExprtInsurCreditCheckStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="PaytAuthsnCreditCheckSts"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CentralCreditCheckStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="CentralCreditChkTechErrSts"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="HdrGeneralIncompletionStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OverallPricingIncompletionSts"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="HeaderDelivIncompletionStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="HeaderBillgIncompletionStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OvrlItmGeneralIncompletionSts"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OvrlItmBillingIncompletionSts"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OvrlItmDelivIncompletionSts"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OverallChmlCmplncStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OverallDangerousGoodsStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OverallSafetyDataSheetStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SalesDocApprovalStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OverallTrdCmplncEmbargoSts"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OvrlTrdCmplncSnctndListChkSts"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OvrlTrdCmplncLegalCtrlChkSts"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="SalesOrderDownPaymentStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="OmniChnlSalesPromotionStatus"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="AlternativePricingDate"/>
+                            <PropertyValue Property="OriginalDataType" String="DATS(000008)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="IsEUTriangularDeal"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000001)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="RetailAdditionalCustomerGrp6"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000003)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="RetailAdditionalCustomerGrp7"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000003)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="RetailAdditionalCustomerGrp8"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000003)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="RetailAdditionalCustomerGrp9"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000003)"/>
+                        </Record>
+                        <Record>
+                            <PropertyValue Property="Property" Path="RetailAdditionalCustomerGrp10"/>
+                            <PropertyValue Property="OriginalDataType" String="CHAR(000003)"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SalesOrder"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SalesOrderType"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SalesOrderProcessingType"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CreatedByUser"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="LastChangedByUser"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CreationDate"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CreationTime"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="LastChangeDate"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="LastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SenderBusinessSystemName"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="ExternalDocumentID"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="ExternalDocLastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SalesOrganization"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="DistributionChannel"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OrganizationDivision"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SalesGroup"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SalesOffice"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SoldToParty"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerGroup"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="AdditionalCustomerGroup1"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="AdditionalCustomerGroup2"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="AdditionalCustomerGroup3"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="AdditionalCustomerGroup4"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="AdditionalCustomerGroup5"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SlsDocIsRlvtForProofOfDeliv"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CreditControlArea"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerRebateAgreement"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SalesOrderDate"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="ServicesRenderedDate"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SDDocumentReason"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="PurchaseOrderByCustomer"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="PurchaseOrderByShipToParty"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SDDocumentCollectiveNumber"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerPurchaseOrderType"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerPurchaseOrderDate"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerPurchaseOrderSuplmnt"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SalesDistrict"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="StatisticsCurrency"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="ProductCatalog"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="NextCreditCheckDate"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="LastCustomerContactDate"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="TotalNetAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="TransactionCurrency"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="PricingDate"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="PriceDetnExchangeRate"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="RetailPromotion"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SalesOrderCondition"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SDPricingProcedure"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerPriceGroup"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="PriceListType"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="BillingPlan"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerTaxClassification1"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerTaxClassification2"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerTaxClassification3"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerTaxClassification4"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerTaxClassification5"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerTaxClassification6"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerTaxClassification7"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerTaxClassification8"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerTaxClassification9"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="TaxDepartureCountry"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="VATRegistrationCountry"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="RequestedDeliveryDate"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="DeliveryDateTypeRule"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="ShippingType"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="ShippingCondition"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="ReceivingPoint"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="IncotermsClassification"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="IncotermsTransferLocation"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="IncotermsLocation1"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="IncotermsLocation2"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="IncotermsVersion"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CompleteDeliveryIsDefined"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OrderCombinationIsAllowed"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="DeliveryBlockReason"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="FashionCancelDate"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SalesOrderApprovalReason"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="BillingDocumentDate"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="BillingCompanyCode"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="HeaderBillingBlockReason"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerPaymentTerms"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="PaymentMethod"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="FixedValueDate"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="FiscalYear"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="FiscalPeriod"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="ExchangeRateDate"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="ExchangeRateType"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="AccountingExchangeRate"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="BusinessArea"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerAccountAssignmentGroup"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CostCenterBusinessArea"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CostCenter"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="ControllingArea"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OrderID"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="ControllingObject"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="AssignmentReference"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="PaymentPlan"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="ContractAccount"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="AdditionalValueDays"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CustomerCreditAccount"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="ReferenceSDDocument"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="ReferenceSDDocumentCategory"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CorrespncExternalReference"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="AccountingDocExternalReference"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="BusinessSolutionOrder"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OverallSDProcessStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OverallPurchaseConfStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OverallSDDocumentRejectionSts"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="TotalBlockStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OverallDelivConfStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OverallTotalDeliveryStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OverallDeliveryStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OverallDeliveryBlockStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OverallOrdReltdBillgStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OverallBillingBlockStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OverallTotalSDDocRefStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OverallSDDocReferenceStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="TotalCreditCheckStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="MaxDocValueCreditCheckStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="PaymentTermCreditCheckStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="FinDocCreditCheckStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="ExprtInsurCreditCheckStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="PaytAuthsnCreditCheckSts"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CentralCreditCheckStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="CentralCreditChkTechErrSts"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="HdrGeneralIncompletionStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OverallPricingIncompletionSts"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="HeaderDelivIncompletionStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="HeaderBillgIncompletionStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OvrlItmGeneralIncompletionSts"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OvrlItmBillingIncompletionSts"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OvrlItmDelivIncompletionSts"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OverallChmlCmplncStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OverallDangerousGoodsStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OverallSafetyDataSheetStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SalesDocApprovalStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OverallTrdCmplncEmbargoSts"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OvrlTrdCmplncSnctndListChkSts"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OvrlTrdCmplncLegalCtrlChkSts"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="SalesOrderDownPaymentStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="OmniChnlSalesPromotionStatus"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="AlternativePricingDate"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="IsEUTriangularDeal"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="RetailAdditionalCustomerGrp6"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="RetailAdditionalCustomerGrp7"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="RetailAdditionalCustomerGrp8"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="RetailAdditionalCustomerGrp9"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="PropertyPath" Path="RetailAdditionalCustomerGrp10"/>
+                                    <PropertyValue Property="AllowedExpressions" EnumMember="MultiRangeOrSearchExpression"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Integration.Extractable" Bool="true"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>startswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="Integration.SourceSystem" String="ABAP"/>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Padding" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="HeaderFooter" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault">
+                            <Null/>
+                        </PropertyValue>
+                        <PropertyValue Property="ResultSizeMaximum">
+                            <Null/>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.KeyAsSegmentSupported"/>
+                <Annotation Term="SAP__capabilities.AsynchronousRequestsSupported"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SalesOrder">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SalesOrderType">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SalesOrderProcessingType">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CreatedByUser">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/LastChangedByUser">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CreationDate">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CreationTime">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/LastChangeDate">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/LastChangeDateTime">
+                <Annotation Term="Aggregation.Aggregatable"/>
+                <Annotation Term="SAP__aggregation.CustomAggregate" Qualifier="LastChangeDateTime" String="Edm.DateTimeOffset"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SenderBusinessSystemName">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/ExternalDocumentID">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/ExternalDocLastChangeDateTime">
+                <Annotation Term="Aggregation.Aggregatable"/>
+                <Annotation Term="SAP__aggregation.CustomAggregate" Qualifier="ExternalDocLastChangeDateTime" String="Edm.DateTimeOffset"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SalesOrganization">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_salesorganization/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SalesOrganization"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="SalesOrganization"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/DistributionChannel">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_distributionchannel/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="DistributionChannel"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="DistributionChannel"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OrganizationDivision">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_division/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="OrganizationDivision"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="Division"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SalesGroup">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SalesOffice">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SoldToParty">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_customer/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SoldToParty"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="Customer"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerGroup">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_customergroup/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CustomerGroup"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="CustomerGroup"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/AdditionalCustomerGroup1">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/AdditionalCustomerGroup2">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/AdditionalCustomerGroup3">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/AdditionalCustomerGroup4">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/AdditionalCustomerGroup5">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SlsDocIsRlvtForProofOfDeliv">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CreditControlArea">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_creditcontrolarea/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CreditControlArea"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="CreditControlArea"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerRebateAgreement">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SalesOrderDate">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/ServicesRenderedDate">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SDDocumentReason">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_sddocumentreason/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SDDocumentReason"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="SDDocumentReason"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/PurchaseOrderByCustomer">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/PurchaseOrderByShipToParty">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SDDocumentCollectiveNumber">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerPurchaseOrderType">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerPurchaseOrderDate">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerPurchaseOrderSuplmnt">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SalesDistrict">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_salesdistrict/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="SalesDistrict"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="SalesDistrict"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/StatisticsCurrency">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_currency/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="StatisticsCurrency"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="Currency"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/ProductCatalog">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/NextCreditCheckDate">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/LastCustomerContactDate">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/TotalNetAmount">
+                <Annotation Term="Aggregation.Aggregatable"/>
+                <Annotation Term="SAP__measures.ISOCurrency" Path="TransactionCurrency"/>
+                <Annotation Term="SAP__aggregation.CustomAggregate" Qualifier="TotalNetAmount" String="Edm.Decimal"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/TransactionCurrency">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/PricingDate">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/PriceDetnExchangeRate">
+                <Annotation Term="Aggregation.Aggregatable"/>
+                <Annotation Term="SAP__aggregation.CustomAggregate" Qualifier="PriceDetnExchangeRate" String="Edm.Decimal"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/RetailPromotion">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SalesOrderCondition">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SDPricingProcedure">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerPriceGroup">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/PriceListType">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/BillingPlan">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerTaxClassification1">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerTaxClassification2">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerTaxClassification3">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerTaxClassification4">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerTaxClassification5">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerTaxClassification6">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerTaxClassification7">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerTaxClassification8">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerTaxClassification9">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/TaxDepartureCountry">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_country/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="TaxDepartureCountry"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="Country"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/VATRegistrationCountry">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_country/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="VATRegistrationCountry"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="Country"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/RequestedDeliveryDate">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/DeliveryDateTypeRule">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/ShippingType">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/ShippingCondition">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/ReceivingPoint">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/IncotermsClassification">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_incotermsclassification/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="IncotermsClassification"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="IncotermsClassification"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/IncotermsTransferLocation">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/IncotermsLocation1">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/IncotermsLocation2">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/IncotermsVersion">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CompleteDeliveryIsDefined">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OrderCombinationIsAllowed">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/DeliveryBlockReason">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/FashionCancelDate">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SalesOrderApprovalReason">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/BillingDocumentDate">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/BillingCompanyCode">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_companycode/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="BillingCompanyCode"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="CompanyCode"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/HeaderBillingBlockReason">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_billingblockreason/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="HeaderBillingBlockReason"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="BillingBlockReason"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerPaymentTerms">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/PaymentMethod">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/FixedValueDate">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/FiscalYear">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/FiscalPeriod">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/ExchangeRateDate">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/ExchangeRateType">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_exchangeratetype/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ExchangeRateType"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="ExchangeRateType"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/AccountingExchangeRate">
+                <Annotation Term="Aggregation.Aggregatable"/>
+                <Annotation Term="SAP__aggregation.CustomAggregate" Qualifier="AccountingExchangeRate" String="Edm.Decimal"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/BusinessArea">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_businessarea/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="BusinessArea"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="BusinessArea"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerAccountAssignmentGroup">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_customeraccountassgmtgroup/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CustomerAccountAssignmentGroup"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="CustomerAccountAssignmentGroup"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CostCenterBusinessArea">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_businessarea/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CostCenterBusinessArea"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="BusinessArea"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CostCenter">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/ControllingArea">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_controllingarea/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ControllingArea"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="ControllingArea"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OrderID">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/ControllingObject">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_controllingobject/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ControllingObject"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="ControllingObject"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/AssignmentReference">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/PaymentPlan">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/ContractAccount">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/AdditionalValueDays">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CustomerCreditAccount">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_customer/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CustomerCreditAccount"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="Customer"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/ReferenceSDDocument">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/ReferenceSDDocumentCategory">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionRoot" String="/sap/opu/odata4/sap/cdi_cds/cdi_cds/sap/i_sddocumentcategory/0001/"/>
+                        <PropertyValue Property="CollectionPath" String="MasterData"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ReferenceSDDocumentCategory"/>
+                                    <PropertyValue Property="ValueListProperty" PropertyPath="SDDocumentCategory"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CorrespncExternalReference">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/AccountingDocExternalReference">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/BusinessSolutionOrder">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OverallSDProcessStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OverallPurchaseConfStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OverallSDDocumentRejectionSts">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/TotalBlockStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OverallDelivConfStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OverallTotalDeliveryStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OverallDeliveryStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OverallDeliveryBlockStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OverallOrdReltdBillgStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OverallBillingBlockStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OverallTotalSDDocRefStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OverallSDDocReferenceStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/TotalCreditCheckStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/MaxDocValueCreditCheckStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/PaymentTermCreditCheckStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/FinDocCreditCheckStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/ExprtInsurCreditCheckStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/PaytAuthsnCreditCheckSts">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CentralCreditCheckStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/CentralCreditChkTechErrSts">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/HdrGeneralIncompletionStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OverallPricingIncompletionSts">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/HeaderDelivIncompletionStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/HeaderBillgIncompletionStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OvrlItmGeneralIncompletionSts">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OvrlItmBillingIncompletionSts">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OvrlItmDelivIncompletionSts">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OverallChmlCmplncStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OverallDangerousGoodsStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OverallSafetyDataSheetStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SalesDocApprovalStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OverallTrdCmplncEmbargoSts">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OvrlTrdCmplncSnctndListChkSts">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OvrlTrdCmplncLegalCtrlChkSts">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/SalesOrderDownPaymentStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/OmniChnlSalesPromotionStatus">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/AlternativePricingDate">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/IsEUTriangularDeal">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/RetailAdditionalCustomerGrp6">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/RetailAdditionalCustomerGrp7">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/RetailAdditionalCustomerGrp8">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/RetailAdditionalCustomerGrp9">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.MasterData/RetailAdditionalCustomerGrp10">
+                <Annotation Term="Aggregation.Groupable"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/MasterData">
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="TotalNetAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
